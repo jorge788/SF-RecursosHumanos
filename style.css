@@ -48,6 +48,7 @@ img {
   font-size: 1.5rem;
   font-weight: 700;
   padding: 0 1rem;
+  transition: all 0.5s ease;
 }
 
 .encabezado {
@@ -283,7 +284,7 @@ form {
   text-align: center;
   align-items: center;
   color: #ffffff;
-  background-color: #001526;
+  background-image: linear-gradient(to right,#001526, #25258f);
   height: 15rem;
 }
 
@@ -438,8 +439,15 @@ footer {
 
   }
 
+  .nav__link:hover {
+    font-size: 2rem;
+    color: #001526;
+    border-bottom: 0.2rem solid #001526
+  }
 
-
+  .contactBox--btn:hover {
+    background-color: #0866be;
+  }
 
 }
 
