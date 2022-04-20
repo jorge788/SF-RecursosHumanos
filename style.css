@@ -13,12 +13,23 @@ body {
   text-align: justify;
 }
 
+.navbar {
+  border-bottom: 0.1rem solid #001526;
+}
+
+.nav-item {
+  color: #001526;
+}
 
 header {
   top: 0;
   background-color: rgb(255, 255, 255);
   border-bottom: #261700 solid 0.2rem;
   text-align: center;
+}
+
+span {
+  font-weight: 700;
 }
 
 .container {
@@ -34,22 +45,6 @@ img {
   margin-top: 1.5rem;
 }
 
-.nav__list {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav__link {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 0 1rem;
-  transition: all 0.5s ease;
-}
 
 .encabezado {
   background-image: url(img/rrhh.png);
@@ -81,54 +76,43 @@ h2 {
   text-align: center;
   font-size: 3rem;
   padding: 2rem;
-  text-decoration: underline;
   text-transform: uppercase;
 }
 
-span {
-  font-weight: 900;
-}
-
-.servicios {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.servicio {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  text-align: center;
+.card-body {
   background-color: #001526;
-  width: 300px;
-  height: 370px; 
-  box-shadow: 10px 0 20px;
-  color: #f6f8f8;
-}
-
-.servicio__icon {
-  padding: 2rem;
-  background-color: #ffffff;
-  border: solid 0.3rem #000000;
-}
-
-.servicio__title {
-  display: block;
-  text-decoration: line;
   color: #ffffff;
-  text-transform: uppercase;
-  padding: 2rem;
-}
-.nosotros {
-  margin-bottom: 6rem;
-  border: dotted 0.1rem black;
-  padding: 2rem;
-  align-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
+.link-card {
+  color: #ffffff;
+  text-decoration: none;
+  
+}
 
 
+.icon {
+  font-size: 5rem;
+  transition: font-size 1s;
+}
+
+.icon:hover {
+  font-size: 7rem;
+}
+
+
+.card-title {
+  font-size: 2.5rem
+}
+
+
+
+
+.h2Title {
+  font-size: 3rem;
+}
 
 
 /* CSS PAGES */
@@ -143,8 +127,10 @@ span {
 }
 
 .hero__busqueda--p {
+  font-size: 1.9rem;
   width: 85%;
   text-align: justify;
+  font-weight: 500;
 }
 
 .hero__busqueda--img {
@@ -190,6 +176,16 @@ span {
   margin-top: 5rem;
 }
 
+.consultoria__p {
+  font-size: 1.9rem;
+  font-weight: 500;
+  width: 85%
+}
+
+.capacitacion__p {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
 
 
 /*FORM*/
@@ -223,6 +219,11 @@ form {
   color: #ffffff;
 }
 
+.contact__p {
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-align: justify;
+}
 
 .label { 
   display: block;
@@ -286,6 +287,7 @@ form {
   color: #ffffff;
   background-image: linear-gradient(to right,#001526, #25258f);
   height: 15rem;
+  font-size: 3rem;
 }
 
 .contactBox {
@@ -294,7 +296,7 @@ form {
   font-weight: 400;
   color: #ffffff;
   width: 30rem;
-  height: 30rem;
+  height: 35rem;
   margin: 1.5rem;
   padding-left: 1rem;
 }
@@ -432,21 +434,17 @@ footer {
 
 @media (min-width:768px) {
 
-  .nav__list {
-    flex-direction: row; 
-    justify-content: space-around;
-    margin-bottom: 1rem;
+  .card-body {
+    min-height: 20rem;
+}
 
-  }
-
-  .nav__link:hover {
-    font-size: 2rem;
-    color: #001526;
-    border-bottom: 0.2rem solid #001526
-  }
 
   .contactBox--btn:hover {
     background-color: #0866be;
+  }
+
+  .pageTitle {
+    font-size: 5rem;
   }
 
 }
@@ -465,10 +463,7 @@ footer {
    
   }
   
-  .nav__list {
-    justify-content: end;
-    margin: 1rem 1rem 1rem 1rem;
-  }
+
 
 
   .encabezado {
