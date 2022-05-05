@@ -1,0 +1,26 @@
+header {
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: #261700 solid 0.2rem;
+    text-align: center;
+    grid-area: header;
+
+    nav {
+        grid-area: nav;
+        font-size: 1.5rem;
+                
+      }
+
+    .nav-link {
+        margin-left: 3rem;
+      }    
+  
+    
+    .navbar {
+        border-bottom: 0.1rem solid $primary-color;
+      }
+      
+    .nav-item {
+        color: $primary-color;
+      }
+  }

@@ -1,11 +1,12 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
+/*base*/
+@import "base/reset.scss" ;
+@import "base/variables.scss" ;
+@import "base/mixins.scss" ;
 
-$primary-color: #001526;
-
+/*components*/
+@import "components/header.scss";
+@import "components/footer.scss" ;
+@import "components/ContactForm.scss" ;
 
   /*css*/
   html {
@@ -19,24 +20,6 @@ $primary-color: #001526;
   }
   
 
-
-
-  
-  .navbar {
-    border-bottom: 0.1rem solid $primary-color;
-  }
-  
-  .nav-item {
-    color: $primary-color;
-  }
-  
-  header {
-    top: 0;
-    background-color: rgb(255, 255, 255);
-    border-bottom: #261700 solid 0.2rem;
-    text-align: center;
-  }
-  
   span {
     font-weight: 700;
   }
@@ -50,13 +33,9 @@ $primary-color: #001526;
     max-width: 100%;
   }
   
-  .logo {
-    margin-top: 1.5rem;
-  }
-  
   
   .encabezado {
-    background-image: url(img/rrhh.png);
+    background-image: url(../img/rrhh.png);
     max-height: 100rem;
     background-position: center;
     background-repeat: no-repeat;
@@ -65,21 +44,24 @@ $primary-color: #001526;
   
   .header__text {
     color: aliceblue;
+
+    &--title {
+      padding: 3rem;
+      font-size: 5rem;
+      text-align: left;
+    }
+
+    &--description {
+      font-size: 2rem;
+      text-transform: uppercase;
+      padding-left: 1rem;
+      text-align: left;
+      background-color: $primary-color;
+    }
   }
   
-  .header__text--title {
-    padding: 3rem;
-    font-size: 5rem;
-    text-align: left;
-  }
   
-  .header__text--description {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding-left: 1rem;
-    text-align: left;
-    background-color: $primary-color;
-  }
+  
   
   h2 {
     text-align: center;
@@ -87,16 +69,20 @@ $primary-color: #001526;
     padding: 2rem;
     text-transform: uppercase;
   }
+
+  .card {
+    box-shadow: 0px 5px 5px rgb(000, 000, 000);
+  }
   
   .card-body {
     background-color: $primary-color;
-    color: #ffffff;
+    color: $secundary-color;
     text-decoration: none;
     font-size: 1.5rem;
   }
   
   .link-card {
-    color: #ffffff;
+    color: $secundary-color;
     text-decoration: none;
     
   }
@@ -105,18 +91,42 @@ $primary-color: #001526;
   .icon {
     font-size: 5rem;
     transition: font-size 1s;
+
+    &:hover {
+      font-size: 7rem;
+    }
   }
   
-  .icon:hover {
-    font-size: 7rem;
-  }
-  
+ 
   
   .card-title {
     font-size: 2.5rem
   }
   
-  
+  .card__btn {
+    margin-top: 2rem;
+    background: none;
+    border: none;
+    background-color: $secundary-color;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    
+
+    &:hover {
+      background-color: #0832be;
+    }
+
+    a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 900;
+
+    &:hover {
+      color: #f6f8f8;
+    }
+    }
+  }
   
   
   .h2Title {
@@ -127,49 +137,37 @@ $primary-color: #001526;
   /* CSS PAGES */
   
   .hero__busqueda {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include FlexContent(center);
     margin-top: 5rem;
     gap: 2rem;
+
+    &--p {
+      width: 85%;
+      text-align: justify;
+      @extend .capacitacion__p;
+    }
+
+    &--img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
   }
   
-  .hero__busqueda--p {
-    font-size: 1.9rem;
-    width: 85%;
-    text-align: justify;
-    font-weight: 500;
-  }
-  
-  .hero__busqueda--img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  
+    
   .capacitacion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include FlexContent(center);
     gap: 4rem;
   }
   
   .capacitacion__cap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include FlexContent(center);
     width: 85%;
   }
   
   .capacitacion__coach {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include FlexContent(center);
     width: 85%;
   }
   
@@ -178,17 +176,15 @@ $primary-color: #001526;
   }
   
   .consultoria {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
+    @include FlexContent(stretch);
     margin-top: 5rem;
   }
   
   .consultoria__p {
-    font-size: 1.9rem;
-    font-weight: 500;
-    width: 85%
+    @extend .capacitacion__p;
+    width: 85%;
+    
+    
   }
   
   .capacitacion__p {
@@ -197,80 +193,7 @@ $primary-color: #001526;
   }
   
   
-  /*FORM*/
   
-  .formPage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    width: 95%;
-  }
-  
-  .formPage_form {
-    text-align: center;
-    width: 85%;
-    margin: 0;
-  }
-  
-  
-  
-  
-  form {
-    margin: 0 auto;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,68,121,1) 43%, rgba(0,212,255,1) 70%);  width: 35rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin-top: 2rem;
-    font-size: 2rem;
-    color: #ffffff;
-  }
-  
-  .contact__p {
-    font-size: 1.9rem;
-    font-weight: 500;
-    text-align: justify;
-  }
-  
-  .label { 
-    display: block;
-    padding-bottom: 0.5rem;
-  }
-  
-  .field {
-    outline: none;
-    background-color: #ffffff;
-    border: solid 0.01rem #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    width: 30rem;
-  }
-  
-  .field:focus {
-    border: solid 0.1rem $primary-color;
-  }
-  .textarea {
-    max-width: 30rem;
-    max-height: 30rem;
-    min-width: 30rem;
-    min-height: 30rem;
-  }
-  
-  .form__btn {
-    padding: 2rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: $primary-color;
-    border-radius: 1rem;
-  
-  }
-  
-  .form__btn:hover {
-    background-color: #000000;
-  }
   
   
   .contactRedes {
@@ -289,11 +212,8 @@ $primary-color: #001526;
   
   
   .pageTitle {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: #ffffff;
+    @include FlexContent(center);
+    color: $secundary-color;
     background-image: linear-gradient(to right,#001526, #25258f);
     height: 15rem;
     font-size: 3rem;
@@ -305,7 +225,7 @@ $primary-color: #001526;
     background-color: $primary-color;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #ffffff;
+    color: $secundary-color;
     width: 30rem;
     height: 35rem;
     margin: 1.5rem;
@@ -324,7 +244,7 @@ $primary-color: #001526;
         margin-top: 2rem;
         background: none;
         border: none;
-        background-color: #ffffff;
+        background-color: $secundary-color;
         padding: 1rem;
         border-radius: 0.5rem;
 
@@ -344,75 +264,8 @@ $primary-color: #001526;
   
   
   
-  /*FORM*/
-  
-  .form {
-    background: rgb(2,0,36);
-    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,68,121,1) 43%, rgba(0,212,255,1) 70%);
-    border-radius: 5%;
-    border: none;
-  
-  }
-  input {
-    background-color: bisque;
-    border: none;
-  }
-  
-  
-  
-  /*FOOTER*/
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: $primary-color;
-    color: #ffffff;
-    font-size: 1.8rem;
-  }
-  
-  .link__footer {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    color: #ffffff;
-  }
-  
-  .link__footer a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  
-  .contacto {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    width: 300px;
-    text-align: left;
-    background-color: #000000;
-    color: #f6f8f8;
-  }
-  
-  .contacto h4 {
-    padding-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .socialIcon {
-    margin-top: 3rem;
-  }
-  
-  .socialIcon__title {
-    padding-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .socialIcon__link {
-    margin-top: 1rem;
-    margin-left: 0.7rem;
-    padding: 1rem;
-  }
-  
+ 
+
   
   /* FIRST MOBILE*/
   
@@ -431,15 +284,7 @@ $primary-color: #001526;
   
   }
   
-  header {
-    grid-area: header;
   
-  }
-  
-  nav {
-    grid-area: nav;
-    
-  }
   
   main {
     grid-area: main;
@@ -453,9 +298,10 @@ $primary-color: #001526;
   @media (min-width:768px) {
   
     .card-body {
-      min-height: 20rem;
+      min-height: 30rem;
   }
   
+    
   
   
   
@@ -479,7 +325,6 @@ $primary-color: #001526;
      
     }
     
-  
   
   
     .encabezado {
