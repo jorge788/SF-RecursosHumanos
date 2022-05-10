@@ -48,6 +48,9 @@ footer__footer {
   color: #ffffff;
 }
 
+.link__footer {
+  margin-top: 3rem;
+}
 .link__footer a {
   text-decoration: none;
   color: #ffffff;
@@ -59,7 +62,11 @@ footer__footer {
   padding: 2rem;
   width: 300px;
   text-align: left;
+  border: 2px solid;
   background-color: #000000;
+  color: #f6f8f8;
+}
+.contacto a {
   color: #f6f8f8;
 }
 
@@ -88,6 +95,11 @@ footer h4 {
   font-size: 2rem;
 }
 
+@media (min-width: 768px) {
+  .link__footer {
+    margin-top: 0px;
+  }
+}
 /*FORM*/
 .formPage {
   display: flex;
@@ -392,6 +404,23 @@ h2 {
   font-family: "lato";
   font-size: 1.5rem;
   font-weight: 900;
+}
+
+.whatsapp {
+  position: fixed;
+  width: 6rem;
+  height: 6rem;
+  bottom: 9rem;
+  right: 3rem;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 3.5rem;
+  z-index: 100;
+}
+.whatsapp:hover {
+  color: #FFF;
 }
 
 /* FIRST MOBILE*/

@@ -263,7 +263,28 @@
   }
   
   
+  .whatsapp {
+    position:fixed;
+    width:6rem;
+    height:6rem;
+    bottom:9rem;
+    right:3rem;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:3.5rem;
+    z-index:100;
+
+    
+    &:hover {
+      color: #FFF;
+    }
+    
+
+  }
   
+ 
  
 
   

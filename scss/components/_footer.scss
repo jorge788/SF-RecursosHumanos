@@ -20,10 +20,15 @@ footer {
   
  
   
-  .link__footer a {
-    text-decoration: none;
-    color: #ffffff;
+  .link__footer 
+  {
+    margin-top: 3rem;
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
   }
+  
   
   .contacto {
     margin-top: 3rem;
@@ -31,8 +36,13 @@ footer {
     padding: 2rem;
     width: 300px;
     text-align: left;
+    border: 2px solid;
     background-color: #000000;
     color: #f6f8f8;
+
+    a{
+      color: #f6f8f8;
+    }
   }
   
   .contacto h4 {
@@ -59,3 +69,11 @@ footer {
   footer h4 {
       font-size: 2rem;
   }
+
+
+  @media (min-width:768px) {
+    .link__footer {
+      margin-top: 0px;
+    }
+  }
+
