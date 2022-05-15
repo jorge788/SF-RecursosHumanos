@@ -33,33 +33,43 @@
     max-width: 100%;
   }
   
+  .encabezado__img {
+    margin: 3rem;
+    display: none;
+    
+  }
+  
   
   .encabezado {
-    background-image: url(../img/rrhh.png);
-    max-height: 100rem;
+    background-image: url(../img/fondo2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    max-height: 200rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+
   }
+  
   
   .header__text {
     color: aliceblue;
 
     &--title {
-      padding: 3rem;
+      padding: 2rem;
       font-size: 5rem;
-      text-align: left;
+      text-align: center;
     }
 
     &--description {
       font-size: 2rem;
       text-transform: uppercase;
-      padding-left: 1rem;
-      text-align: left;
-      background-color: $primary-color;
+      text-align: center;
+      margin: 1rem 3rem;
     }
   }
-  
   
   
   
@@ -78,7 +88,7 @@
     background-color: $primary-color;
     color: $secundary-color;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
   .link-card {
@@ -110,10 +120,14 @@
     background-color: $secundary-color;
     padding: 1rem;
     border-radius: 0.5rem;
+    font-weight: 700;
+    
+    
     
 
     &:hover {
       background-color: #0832be;
+      color: #FFF;
     }
 
     a {
@@ -247,6 +261,7 @@
         background-color: $secundary-color;
         padding: 1rem;
         border-radius: 0.5rem;
+        
 
         &:hover {
             background-color: #0866be;
@@ -317,6 +332,47 @@
   
   
   @media (min-width:768px) {
+
+    .encabezado__img {
+      margin: 3rem;
+      display: inline;
+      
+    }
+    
+    
+    .encabezado {
+      background-image: url(../img/fondo2.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-height: 100rem;
+      display: flex;
+      gap: 1rem;
+  
+    }
+
+    .header__text--title {
+      text-align: left;
+    }
+
+    /*ANIMACION*/
+    .header__text--description {
+      text-align: left;
+      margin-left: 2rem;
+      animation-duration: 4s;
+      animation-name: descricion;
+      animation-iteration-count: initial;
+
+    }
+    @keyframes descricion {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
   
     .card-body {
       min-height: 30rem;
@@ -349,10 +405,17 @@
   
   
     .encabezado {
-      height: 30rem;
+      height: 35rem;
     }
-  
-  
+    .img {
+      max-width: 90%;
+    }
+    
+    .header__text--description {
+      margin-top: 3rem;
+      
+    }
+   
   
     .servicios {
       display: flex;
@@ -380,9 +443,7 @@
     .hero__busqueda--p {
       width: 50%;
     }
-    .header__text--description {
-      max-width: 70%;
-    }
+    
   
     .formPage {
       margin: 3rem 3rem 3rem 3rem;
